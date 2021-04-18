@@ -221,7 +221,8 @@ struct rb_tree
         node->right = x_left;
         x->left = node;
         x->color = node->color; //将node节点颜色保留
-        node->color =rb_node:: red; 
+        node->color =rb_node:: red;
+        return x; 
     }
 
     //右旋
@@ -233,6 +234,7 @@ struct rb_tree
         x->right = node;
         x->color = node->color; // 将node节点颜色保留
         node->color = rb_node::red;
+        return x;
     }
 
     //变色
