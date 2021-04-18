@@ -20,17 +20,17 @@
     * 4-节点：包含 3 个元素的节点，有 4 个子节点；
 3. 元素始终保持排序顺序，整体上保持二叉查找树的性质，即父结点大于左子结点，小于右子结点；而且结点有多个元素时，每个元素必须大于它左边的和它的左子树中元素。
 
-![image](https://macimg.com/image/GPLL3)
+![1](macimg.com/image/GPLL3)
 
 
 一棵典型的2-3-4树
 
-![image](https://macimg.com/image/GPitM)
+![2](https://macimg.com/image/GPitM)
 
 
 任何一棵红黑树都可以与2-3-4树互相等价转换。例如
 
-![image](https://macimg.com/image/GPrJY)
+![3](https://macimg.com/image/GPrJY)
 
 可以随意找个红黑树实验下，只需将指向红色节点的连接折平，结合为一个3-节点或4-节点。
 
@@ -40,11 +40,11 @@
 
 1. 插入节点为2节点，直接插入
 
-![image](https://macimg.com/image/GP04w)
+![4](https://macimg.com/image/GP04w)
 
 2. 插入节点为3节点，直接插入
 
-![image](https://macimg.com/image/GPM0F)
+![5](https://macimg.com/image/GPM0F)
 
 3. 插入节点为4节点，
     * 先提取3-节点的中间值，并分裂为两个2-节点，再根据要插入的值，选择插入其中一个2-节点。
@@ -52,11 +52,11 @@
 
 插入4-节点，且父节点为2-节点
 
-![image](https://macimg.com/image/GPj2d)
+![6](https://macimg.com/image/GPj2d)
 
 插入3-节点，且父节点为4-节点
 
-![image](https://macimg.com/image/GPTtK)
+![7](https://macimg.com/image/GPTtK)
 
 
 
@@ -76,7 +76,7 @@
 下图是对应的3，4节点：
 
 
-![image](https://macimg.com/image/GPhYC)
+![8](https://macimg.com/image/GPhYC)
 
 
 * 插入2-节点(a)
@@ -113,7 +113,7 @@
 
 我们将一个2-3-4树中的4-节点，当做一种已经往3节点插入值需要处理的节点。将4-节点(a,b,c)的中间值b提出，分裂为(a),(c)两个子节点。再将b插入其父亲节点。所以与2-3-4树完全等价，即与红黑树完全等价。如下图，将11提出，分裂为(10)和(12)；递归的，再将11插入变为(7，9，11)，；递归的，提出9，将9插入根节点，变为(5，9).
 
-![image](https://macimg.com/image/GPkFH)
+![9](https://macimg.com/image/GPkFH)
 
 
 
@@ -126,11 +126,11 @@
 
 以下图为例子
 
-![image](https://macimg.com/image/GPCOa)
+![10](https://macimg.com/image/GPCOa)
 
 插入节点1，过程如下
 
-![image](https://macimg.com/image/GPqDT)
+![11](https://macimg.com/image/GPqDT)
 
 
 **我们规定3节点的左边的数为红色**，用红黑树模拟，此时情况变少了
@@ -150,29 +150,29 @@
 
 上图对应红黑树如下
 
-![image](https://macimg.com/image/GP8hA)
+![12](https://macimg.com/image/GP8hA)
 
 
 插入节点key < a ,如插入1，过程如下
 1. 1应该插入2的左边，但出现连续红色，(2,3)右旋，2获得3的颜色，3变红色。
 
-![image](https://macimg.com/image/GPFJS)
+![13](https://macimg.com/image/GPFJS)
 
 2. 此时2的左右子树均为红色，分裂为(1)(3)，即1，3变黑色，2变红色。
 
-![image](https://macimg.com/image/GPVA0)
+![14](https://macimg.com/image/GPVA0)
 
 3. 递归向上，6的左子树2，4出现连续红色，同样将(6,4)右旋，4获得6的颜色，6变为红色。 假设6原本的颜色为红色，那么4根节点也有可能就变为红，所以最后要将根节点置为黑色 。
-![image](https://macimg.com/image/GP50B)
+![15](https://macimg.com/image/GP50B)
 
 
 同样，如果插入节点为a < key < b,如在树中插入2，值需将(1,2)左旋，又回到步骤1。
 
-![image](https://macimg.com/image/GPG2z)
+![16](https://macimg.com/image/GPG2z)
 
 如果key > b,插入3，那么又回到了步骤2
 
-![image](https://macimg.com/image/GPbvs)
+![17](https://macimg.com/image/GPbvs)
 
 
 ### 实践代码
