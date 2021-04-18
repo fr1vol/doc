@@ -1,4 +1,3 @@
-
 # 快速理解红黑树
 
 ### 红黑树性质
@@ -278,7 +277,6 @@ private:
 }
 ```
 
-删除有时间再写。
 
 
--[参考资料:算法（第4版）作者: 塞奇威克 (Robert Sedgewick) / 韦恩 (Kevin Wayne)](https://book.douban.com/subject/19952400/)
+[参考资料:算法（第4版）作者: 塞奇威克 (Robert Sedgewick) / 韦恩 (Kevin Wayne)](https://book.douban.com/subject/19952400/)
